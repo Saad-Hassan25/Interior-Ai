@@ -1,0 +1,36 @@
+{
+  "color_palettes": [
+    {
+      "name": "Warm Neutral",
+      "description": "A palette based on warm-toned neutrals such as beige, cream, taupe, warm gray, tan, and soft brown. It creates a cozy and inviting atmosphere, with colors that feel soft, earthy, and comforting. Works well with warm woods, natural fabrics, and gentle lighting, producing a harmonious and welcoming environment."
+    },
+    {
+      "name": "Cool Neutral",
+      "description": "A palette built around cool-toned neutrals including cool gray, charcoal, soft black, icy white, and muted blue-gray. Feels clean, crisp, and modern. Pairs well with metal finishes, glass, and sleek materials, creating a calm, sophisticated, and airy environment."
+    },
+    {
+      "name": "Earth & Organic",
+      "description": "A nature-inspired palette using brown, clay, terracotta, olive green, moss, sand, and muted earthy tones. It produces a grounded, natural, and relaxing feel. Works harmoniously with natural materials such as wood, stone, rattan, and linen, evoking warmth and organic energy."
+    },
+    {
+      "name": "Bold & Contrasting",
+      "description": "A high-impact palette featuring strong, vivid colors and sharp contrasts, such as black with white, deep blue with gold, red with charcoal, or other vibrant accents. Creates a dynamic, energetic look and suits modern, artistic, or dramatic interiors."
+    },
+    {
+      "name": "Monochrome & Minimal",
+      "description": "A clean, simplified palette based on single-color families, usually shades of white, black, gray, or a single muted tone. Emphasizes clarity, purity, and order. Works well with minimalism and geometric forms, producing a calm, disciplined, and visually controlled environment."
+    },
+    {
+      "name": "Pastel & Calm",
+      "description": "A soft and gentle palette featuring pastel pink, sky blue, mint green, lavender, peach, and soft yellow. Creates a soothing, friendly, and relaxed atmosphere. Works with playful shapes, soft fabrics, and light wood, evoking a delicate and peaceful mood."
+    },
+    {
+      "name": "Luxury & Glam",
+      "description": "A rich, high-end palette focused on deep jewel tones like emerald, sapphire, and ruby, combined with metallics such as gold, brass, and chrome, as well as opulent colors like black, champagne, and royal purple. Feels dramatic and premium, pairing well with marble, velvet, glass, and reflective finishes."
+    },
+    {
+      "name": "Coastal & Airy",
+      "description": "A breezy palette inspired by the seaside, using whites, soft blues, seafoam green, sandy beige, and light wood tones. Feels fresh, open, and relaxing. Works well with natural light, linen fabrics, and coastal textures, creating a cool, bright, and airy environment."
+    }
+  ]
+}

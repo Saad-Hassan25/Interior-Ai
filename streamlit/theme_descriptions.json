@@ -1,0 +1,52 @@
+{
+  "themes": [
+    {
+      "name": "Modern",
+      "description": "A design movement from the early–mid 1900s featuring clean lines, smooth surfaces, and functional furniture. It uses neutral colors like white, gray, black, and beige, with materials such as steel, glass, and wood. The overall feel is clean, orderly, and geometric, emphasizing function over decoration."
+    },
+    {
+      "name": "Contemporary",
+      "description": "A constantly evolving style that reflects the design trends of today. It features smooth shapes, open spaces, and more curved lines, with neutral-heavy palettes accented by bold tones. Materials include metals, soft fabrics, and wood, creating an elegant, trendy, and fresh atmosphere centered around current design ideas."
+    },
+    {
+      "name": "Scandinavian",
+      "description": "A Nordic-inspired cozy minimalist style known for light wood, clean lines, and soft, warm textures. Colors include white, cream, and earthy tones, with materials like oak, wool, and cotton. The overall feeling is cozy, simple, and bright, reflecting the idea of warm minimalism."
+    },
+    {
+      "name": "Industrial",
+      "description": "A factory- and loft-inspired style featuring exposed brick, visible pipes, concrete surfaces, and metal fixtures. It uses dark neutral colors such as gray, black, and brown, with materials like metal, reclaimed wood, and concrete. The feel is raw, masculine, and edgy, celebrating an unfinished but intentional aesthetic."
+    },
+    {
+      "name": "Bohemian",
+      "description": "An artistic, eclectic, and carefree style with colorful patterns, plants, and global influences. It blends earthy base tones with bright accents, using materials such as rattan, textiles, and natural fibers. The feeling is relaxed, cozy, and creative, prioritizing personality over strict rules."
+    },
+    {
+      "name": "Minimalist",
+      "description": "A design philosophy focused on extreme simplicity and essentialism. It features bare spaces, simple geometry, and a restrained palette of whites and light neutrals. Materials include smooth wood, stone, and simple fabrics. The atmosphere is calm, quiet, and clean, embodying the idea that less is more."
+    },
+    {
+      "name": "Mid-Century Modern",
+      "description": "A retro-modern style from the 1950s–1960s with wooden furniture, tapered legs, and simple geometric shapes. Colors include mustard, teal, and warm wood tones, paired with materials like walnut, leather, and retro textiles. It feels warm, stylish, and nostalgic, balancing vintage character with timeless appeal."
+    },
+    {
+      "name": "Farmhouse Rustic",
+      "description": "A warm, homey, countryside-inspired style featuring shiplap walls, barn doors, and distressed wood. It uses cream, warm browns, and muted tones, with materials like reclaimed wood, iron, and linen. The feel is cozy, family-oriented, and inviting, emphasizing classic country charm."
+    },
+    {
+      "name": "Japanese",
+      "description": "A style rooted in Japanese simplicity and a deep connection to nature. It features low-profile furniture, clean horizontal lines, and natural materials. Colors include earth tones and soft neutrals, using bamboo, wood, rice paper, and stone. The atmosphere is peaceful, balanced, minimal, and warm, promoting calm and harmony."
+    },
+    {
+      "name": "Mediterranean",
+      "description": "A design inspired by homes in Greece, Italy, and Spain, featuring white walls, arches, terracotta elements, and blue accents. Colors include white, blue, earthy oranges, and olive green. Materials such as stone, iron, and stucco create a bright, warm, breezy feel reminiscent of sunny coastal Europe."
+    },
+    {
+      "name": "Luxury Glam",
+      "description": "A high-end, dramatic, and upscale style with shiny surfaces, marble, chandeliers, and rich fabrics. Colors include black, gold, silver, and jewel tones, with materials like velvet, marble, crystal, and metallics. The overall feel is rich, elegant, and statement-making, emphasizing opulence."
+    },
+    {
+      "name": "Coastal",
+      "description": "A beach-inspired light and airy style featuring whites, blues, driftwood tones, and striped patterns. It uses sky blue, navy, beige, and white, with materials such as linen, wicker, and bleached wood. The feel is relaxed, breezy, and bright, evoking classic beach house vibes."
+    }
+  ]
+}
