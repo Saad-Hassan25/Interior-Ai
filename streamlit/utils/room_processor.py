@@ -148,7 +148,7 @@ class RoomImageProcessor:
             return edited_img
             
         except Exception as e:
-            print(f"❌ Error in object removal API call: {str(e)}")
+            print(f"Error in object removal API call: {str(e)}")
             return None
     
     def check_room_cleanliness(self, image_path: Path) -> bool:
@@ -302,19 +302,20 @@ Be precise and realistic. Most residential rooms range from 10-20 feet per dimen
                     'length': float(dimensions.get('length', 12)),
                     'width': float(dimensions.get('width', 12))
                 }
-            else:
-                # Fallback: try to parse numbers
-                numbers = re.findall(r'\d+\.?\d*', text_response)
-                if len(numbers) >= 2:
-                    return {
-                        'length': float(numbers[0]),
-                        'width': float(numbers[1])
-                    }
-                else:
-                    return {'length': 12.0, 'width': 12.0}  # Default
+            #################################
+            # else:
+            #     # Fallback: try to parse numbers
+            #     numbers = re.findall(r'\d+\.?\d*', text_response)
+            #     if len(numbers) >= 2:
+            #         return {
+            #             'length': float(numbers[0]),
+            #             'width': float(numbers[1])
+            #         }
+            #     else:
+            #         return {'length': 12.0, 'width': 12.0}  # Default
             
         except Exception as e:
-            print(f"❌ Error predicting dimensions: {str(e)}")
+            print(f"Error predicting dimensions: {str(e)}")
             return {'length': 12.0, 'width': 12.0}  # Default dimensions
     
     def process_uploaded_room(
@@ -362,7 +363,7 @@ Be precise and realistic. Most residential rooms range from 10-20 feet per dimen
             current_img_path = original_path
             
             while iteration <= max_iterations:
-                print(f"🌀 Iteration {iteration}: Removing objects...")
+                print(f"Iteration {iteration}: Removing objects...")
                 
                 # Remove objects
                 edited_img = self.remove_objects_api_call(current_img_path)
@@ -385,10 +386,10 @@ Be precise and realistic. Most residential rooms range from 10-20 feet per dimen
                     result['clean_path'] = str(final_path)
                     result['iterations'] = iteration
                     
-                    print(f"✅ Room cleaned in {iteration} iteration(s)")
+                    print(f"Room cleaned in {iteration} iteration(s)")
                     break
                 else:
-                    print(f"⚠️ Room still has objects (iteration {iteration})")
+                    print(f"Room still has objects (iteration {iteration})")
                     # Use this as input for next iteration
                     current_img_path = temp_path
                     iteration += 1
@@ -399,7 +400,7 @@ Be precise and realistic. Most residential rooms range from 10-20 feet per dimen
                 return result
             
             # Step 3: Predict room dimensions
-            print("📏 Predicting room dimensions...")
+            print("Predicting room dimensions...")
             dimensions = self.predict_room_dimensions(
                 Path(result['original_path']),
                 Path(result['clean_path'])
@@ -407,11 +408,11 @@ Be precise and realistic. Most residential rooms range from 10-20 feet per dimen
             result['dimensions'] = dimensions
             
             result['success'] = True
-            print(f"✅ Dimensions: {dimensions['length']}ft × {dimensions['width']}ft")
+            print(f"Dimensions: {dimensions['length']}ft × {dimensions['width']}ft")
             
             return result
             
         except Exception as e:
             result['error'] = str(e)
-            print(f"❌ Error processing room: {str(e)}")
+            print(f"Error processing room: {str(e)}")
             return result

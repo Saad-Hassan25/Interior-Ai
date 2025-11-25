@@ -13,8 +13,12 @@
     ],
     "color_palettes": [
       {
-        "name": "Cool Neutral",
-        "description": "A palette built around cool-toned neutrals including cool gray, charcoal, soft black, icy white, and muted blue-gray. Feels clean, crisp, and modern. Pairs well with metal finishes, glass, and sleek materials, creating a calm, sophisticated, and airy environment."
+        "name": "Warm Neutral",
+        "description": "A palette based on warm-toned neutrals such as beige, cream, taupe, warm gray, tan, and soft brown. It creates a cozy and inviting atmosphere, with colors that feel soft, earthy, and comforting. Works well with warm woods, natural fabrics, and gentle lighting, producing a harmonious and welcoming environment."
+      },
+      {
+        "name": "Earth & Organic",
+        "description": "A nature-inspired palette using brown, clay, terracotta, olive green, moss, sand, and muted earthy tones. It produces a grounded, natural, and relaxing feel. Works harmoniously with natural materials such as wood, stone, rattan, and linen, evoking warmth and organic energy."
       }
     ],
     "budget_range": "Medium",
@@ -34,41 +38,41 @@
       "watch_tv_in_bed": false,
       "like_to_cook": false
     },
-    "ai_room_description": "The bedroom marries contemporary flair with Scandinavian simplicity, creating an airy, functional retreat that supports both restful sleep and focused work-from‑home sessions. The design anchors itself in a cool‑neutral palette—soft gray walls, charcoal accents, icy white trim, and muted blue‑gray throw pillows—providing a calm, sophisticated backdrop that feels expansive and uncluttered. A sleek, low‑profile platform bed with a wooden frame and upholstered headboard in a muted fabric ties the room together, while a minimalist white desk with clean lines and a clear glass surface offers an efficient workspace. A small, rounded accent chair in light oak and soft fabric invites relaxed reading or casual entertaining, and a slim metal floor lamp adds contemporary edge without overwhelming the space. Natural wood elements—such as a walnut nightstand and a subtle oak accent wall—inject warmth, echoing Scandinavian light‑wood tones, while the plush, neutral‑colored bedding and woolen throws keep the atmosphere cozy yet uncluttered. The medium‑budget focus ensures high‑quality, durable pieces that balance style and affordability, and the layout protects against wear, suitable for an adult lifestyle with no children or pets. Together, the furnishings, materials, and palette culminate in an elegant, versatile bedroom that feels both modern and comforting, ready for relaxed evenings and productive days alike."
+    "ai_room_description": "The ideal bedroom blends contemporary sleekness with Scandinavian warmth, creating a light‑filled sanctuary that feels both current and cozily grounded; smooth, open‑plan geometry and subtle curved lines sit beside clean‑line, low‑profile Scandinavian furnishings, while the overall silhouette remains uncluttered and inviting. A warm‑neutral base of creamy beige, soft taupe and gentle warm gray coats the walls and large upholstered headboard, allowing earthy‑organic accents of terracotta, muted olive and mossy green to appear in woven throw pillows, a hand‑knotted wool rug and a few decorative ceramic vases, forging a seamless dialogue between the two palettes. Light oak and natural‑finished wood dominate the platform bed frame, bedside tables and a modest dresser, echoing the Scandinavian love of light wood, while brushed‑nickel or matte black metal accents on lamp bases and a sleek floating desk nod to contemporary material play. Soft, high‑quality fabrics—linen bedding, cotton curtains, and a plush wool throw—provide tactile comfort for the work‑from‑home professional who uses the room as a quiet office and occasional entertaining space, while the absence of children or pets allows the design to remain refined and free of heavy protection. Gentle, layered lighting—ambient recessed LEDs, a minimalist pendant, and a warm bedside lamp—creates an elegant, fresh atmosphere that feels both trendy and timeless, perfectly suited to a medium‑budget execution."
   },
   "selected_furniture": {
     "beds": {
-      "id": 4,
-      "name": "Loretta-Canopy-Bed 4",
-      "original_name": "buy-loretta-canopy-bed_4",
+      "id": 2,
+      "name": "Anton-Solid-Wood-Bed 6",
+      "original_name": "buy-anton-solid-wood-bed_6",
       "category": "beds",
-      "description": "This canopy bed embodies a **Contemporary** design style with **Mid-Century Modern** influences, featuring sleek, tall wooden posts that form an airy four-poster frame, blending classic elegance with minimalist lines. The **color palette** centers on a **warm neutral** scheme, dominated by rich, honey-toned wood in a smooth, satin finish—likely walnut or mahogany—paired with soft **cool neutral** accents like the creamy beige upholstered headboard and pristine white bedding for a serene, monochromatic harmony. Primary **materials** include high-quality hardwood for the slender, vertical posts and sturdy platform base, contrasted by plush fabric upholstery on the headboard with subtle tufting for tactile depth. **Key features** highlight the open canopy structure that invites draping fabrics, slim geometric proportions, and a low-profile silhouette that emphasizes height and negative space, creating a sculptural focal point without ornate details. Ideal for **master bedrooms in urban lofts, modern apartments, or tranquil retreats**, it suits spaces with high ceilings and neutral walls. The overall **atmosphere** is **sophisticated and serene**, evoking quiet luxury and restful coziness—perfect for those seeking refined, airy elegance that pairs seamlessly with Scandinavian textiles or subtle coastal accents to match versatile interior preferences. (178 words)",
-      "image_url": "https://asipcawpjvpwjyfcayvw.supabase.co/storage/v1/object/public/furniture-inventory/beds/buy-loretta-canopy-bed_4.jpg",
-      "length": 85.0,
-      "width": 64.0,
-      "similarity": 65.6
+      "description": "This Scandinavian-inspired platform bed embodies minimalist elegance with its clean lines and natural warmth, perfect for modern living spaces. Crafted from solid acacia wood with a light, matte natural finish that highlights the grain's subtle texture, it features a warm neutral color palette dominated by soft honey-toned browns, accented by crisp white linens for a serene, airy contrast. Key design elements include a tall, rectangular headboard with gently tapered edges for a subtle Mid-Century Modern nod, a low-slung platform frame that eliminates the need for a box spring, and four sturdy, square wooden legs that provide stable elevation and an open, breathable underbed area. Ideal for contemporary bedrooms, urban lofts, or airy guest rooms, it suits spaces with neutral or earth-toned decor where simplicity reigns. The overall atmosphere is cozy yet sophisticated, evoking a sense of organic tranquility and effortless style that invites relaxation while seamlessly blending with Coastal, Farmhouse Rustic, or Monochrome & Minimal interiors, making it a versatile anchor for personalized sanctuaries. (178 words)",
+      "image_url": "https://asipcawpjvpwjyfcayvw.supabase.co/storage/v1/object/public/furniture-inventory/beds/buy-anton-solid-wood-bed_6.jpg",
+      "length": 82.0,
+      "width": 66.0,
+      "similarity": 64.4
     },
     "chairs": {
-      "id": 12,
-      "name": "Dunham-Leather-Slipper-Chair 4",
-      "original_name": "buy-dunham-leather-slipper-chair_4",
+      "id": 11,
+      "name": "Benson-Leather-Chair 1",
+      "original_name": "buy-benson-leather-chair_1",
       "category": "chairs",
-      "description": "This Mid-Century Modern chair embodies Scandinavian design principles with its clean, organic lines and artisanal craftsmanship, evoking the timeless elegance of Danish masters like Hans Wegner. The warm neutral color palette dominates, featuring light oak wood tones in the sturdy frame and legs, complemented by soft beige woven cord in the high, enveloping backrest and subtle tan leather upholstery on the wide, low-slung seat for a cohesive, earthy harmony. Crafted from solid oak wood with a smooth, natural finish that highlights the grain, the chair pairs it with durable, textured paper cord weaving—tightly latticed in a classic basketry pattern—for breathability and visual interest, while the supple leather seat offers plush comfort without excess padding. Key features include the dramatically angled backrest that cradles the body, exposed splayed legs for stability and airiness, and a sculptural silhouette that balances form and function. Ideal for contemporary living rooms, minimalist home offices, cozy reading nooks, or airy Scandinavian-inspired spaces, it infuses any interior with a sophisticated yet relaxed atmosphere—cozy and inviting, promoting serene relaxation while elevating everyday lounging with understated luxury and natural warmth. (178 words)",
-      "image_url": "https://asipcawpjvpwjyfcayvw.supabase.co/storage/v1/object/public/furniture-inventory/chairs/buy-dunham-leather-slipper-chair_4.jpg",
-      "length": 30.0,
-      "width": 27.0,
-      "similarity": 60.7
+      "description": "This striking armchair embodies a Contemporary design style with strong Mid-Century Modern influences, characterized by its bold, sculptural form and oversized, tubular wooden arms and legs that curve organically for a playful yet sophisticated silhouette. The color palette centers on a rich, warm neutral cognac-brown velvet upholstery that pairs seamlessly with the light, natural oak wood frame, evoking an Earth & Organic vibe with subtle luxury through its plush texture and matte wood finish. Crafted from high-quality solid wood with a smooth, unfinished-like patina and sumptuously soft, durable fabric, the chair's key features include its generously proportioned seat, ergonomic backrest, and distinctive rounded, pod-like structure that nods to iconic designers like Eero Saarinen while feeling fresh and modern. Ideal for contemporary living rooms, cozy reading nooks, upscale home offices, or eclectic lounges, it creates an inviting, sophisticated atmosphere—luxuriously cozy and effortlessly elegant—perfect for those seeking statement pieces that blend comfort with artistic flair in warm, layered interiors. (178 words)",
+      "image_url": "https://asipcawpjvpwjyfcayvw.supabase.co/storage/v1/object/public/furniture-inventory/chairs/buy-benson-leather-chair_1.jpg",
+      "length": 33.0,
+      "width": 32.0,
+      "similarity": 52.3
     },
     "sofas": {
-      "id": 16,
-      "name": "Andes-3-Piece-L-Shaped-Sectional 10",
-      "original_name": "buy-andes-3-piece-l-shaped-sectional_10",
+      "id": 20,
+      "name": "Kaufman-Sofa-86 6",
+      "original_name": "buy-kaufman-sofa-86_6",
       "category": "sofas",
-      "description": "This Contemporary sofa embodies sleek Modern Minimalism with subtle Mid-Century Modern influences, featuring clean, squared-off lines, track arms, and a low-slung L-shaped sectional profile that maximizes seating in compact footprints. Its Cool Neutral color palette centers on a sophisticated medium-gray fabric upholstery—soft yet textured with a subtle sheen for depth—contrasted by striking Warm Neutral brass-finished metal legs that are thin, tapered, and splayed for an airy lift. The fabric appears to be durable performance velvet or high-pile polyester, paired with slim wooden or metal frames hidden beneath, ensuring both plush comfort and easy maintenance. Key features include deep boxed seat cushions with welted edges for a tailored look, generous chaise extension on one side, and understated tufting-free simplicity that avoids visual clutter. Ideal for urban living rooms, open-concept apartments, or modern home offices, it suits spaces with high ceilings or minimalist decor. The overall atmosphere is elegantly casual yet sophisticated—cozy for lounging without overwhelming, evoking refined urban chic that pairs seamlessly with brass accents, marble coffee tables, or neutral rugs for a luxurious, understated vibe. (178 words)",
-      "image_url": "https://asipcawpjvpwjyfcayvw.supabase.co/storage/v1/object/public/furniture-inventory/sofas/buy-andes-3-piece-l-shaped-sectional_10.jpg",
-      "length": 96.0,
-      "width": 96.0,
-      "similarity": 55.8
+      "description": "This Contemporary sofa embodies a sleek, organic Modern aesthetic with subtle Scandinavian influences, characterized by its fluid, wave-like silhouette that evokes effortless fluidity and sculptural elegance. The warm neutral color palette dominates in a soft, creamy taupe beige upholstery, offering a versatile, understated elegance without bold accents, perfect for blending seamlessly into varied schemes. Crafted from plush velvet-like fabric with a velvety texture for supreme comfort and tactile appeal, it rests on a minimalist wooden plinth base with a natural, matte finish that grounds the design. Key features include the dramatic curved arms and backrest that seamlessly morph into a deep, enveloping seat, creating an asymmetrical, ergonomic form ideal for lounging, paired with subtle channeling for added dimension and a low-profile stance for visual lightness. This piece thrives in modern living rooms, open-concept apartments, minimalist home offices, or boutique hotel lounges, where it fosters a sophisticated yet cozy atmosphere—inviting relaxation with a touch of refined luxury, making it an ideal anchor for those seeking serene, tactile sophistication in their interiors. (178 words)",
+      "image_url": "https://asipcawpjvpwjyfcayvw.supabase.co/storage/v1/object/public/furniture-inventory/sofas/buy-kaufman-sofa-86_6.jpg",
+      "length": 86.0,
+      "width": 33.0,
+      "similarity": 55.9
     },
     "tables": {
       "id": 24,
@@ -79,7 +83,7 @@
       "image_url": "https://asipcawpjvpwjyfcayvw.supabase.co/storage/v1/object/public/furniture-inventory/tables/buy-mid-century-console_1.jpg",
       "length": 13.0,
       "width": 42.0,
-      "similarity": 54.0
+      "similarity": 49.1
     }
   },
   "total_items_selected": 4

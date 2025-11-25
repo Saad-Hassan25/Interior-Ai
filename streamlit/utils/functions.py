@@ -55,7 +55,7 @@ def display_image_grid(items, folder, selected_items, max_selections=3, item_typ
             )
             
             # Show description in expander
-            with st.expander("ℹ️ Details"):
+            with st.expander("Details"):
                 st.write(item['description'])
 
 def get_selected_items_with_descriptions(selected_names, all_items):
@@ -70,10 +70,6 @@ def get_selected_items_with_descriptions(selected_names, all_items):
     return result
 
 def generate_room_description(user_preferences):
-    """
-    Generate a comprehensive room description paragraph using GPT-4 via OpenRouter.
-    The description will be used for finding similar furniture items.
-    """
     if not OPENROUTER_API_KEY or OPENROUTER_API_KEY == "YOUR_OPENROUTER_API_KEY_HERE":
         return {
             "success": False,
@@ -81,8 +77,7 @@ def generate_room_description(user_preferences):
         }
     
     # Construct the prompt
-    prompt = f"""You are an expert interior designer. Based on the following user preferences, create a detailed, comprehensive paragraph describing their ideal room. This description will be used to find matching furniture items, so be specific about style, colors, materials, and atmosphere.
-
+    prompt = f"""You are an expert interior designer. Based on the following user preferences, create a detailed and cohesive descriptive paragraph of the user’s ideal room. This paragraph will be used for AI-based furniture matching and room designing, so it must clearly communicate the room’s style, color palette, materials, atmosphere, and lifestyle context.
 User Preferences:
 {json.dumps(user_preferences, indent=2)}
 
@@ -91,17 +86,15 @@ Requirements for the description:
 2. MUST describe all selected design themes/styles with their key characteristics
 3. MUST describe all selected color palettes and how they work together
 4. MUST mention material preferences if any
-5. Include the budget range context ({user_preferences.get('budget_range', 'medium')})
-6. Consider lifestyle factors (kids, pets, entertaining, work-from-home, etc.)
-7. Create a cohesive vision that blends all the selected elements
-8. Focus on furniture style, materials, colors, and overall ambiance
-9. Keep it as ONE comprehensive paragraph (150-250 words)
-10. Write in a descriptive, professional tone suitable for furniture search
+5. Consider lifestyle factors (kids, pets, entertaining, work-from-home, etc.)
+6. Create a cohesive vision that blends all the selected elements
+7. Focus on furniture style, materials, colors, and overall ambiance
+8. Keep it as ONE comprehensive paragraph (150-250 words)
+9. Write in a descriptive, professional tone suitable for furniture search
 
 Generate the room description paragraph:"""
 
     try:
-        # Call OpenRouter API with GPT-4
         response = requests.post(
             url="https://openrouter.ai/api/v1/chat/completions",
             headers={
@@ -109,7 +102,7 @@ Generate the room description paragraph:"""
                 "Content-Type": "application/json",
             },
             json={
-                "model": "openai/gpt-oss-20b:free",
+                "model": "openai/gpt-oss-120b", # openai/gpt-oss-20b:free
                 "messages": [
                     {
                         "role": "system",
@@ -120,8 +113,8 @@ Generate the room description paragraph:"""
                         "content": prompt
                     }
                 ],
-                "temperature": 0.7,
-                "max_tokens": 1024
+                "temperature": 0.5,
+                "max_tokens": 2048
             },
             timeout=30
         )

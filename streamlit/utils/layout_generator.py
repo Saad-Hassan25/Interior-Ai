@@ -474,7 +474,7 @@ IMPORTANT: Return ONLY valid JSON. Do not include any markdown formatting, expla
                     st.warning(f"🔄 Retry attempt {attempt + 1}/{max_retries} for AI placement instructions...")
                 
                 completion = self.client.chat.completions.create(
-                    model="x-ai/grok-4.1-fast:free",
+                    model="qwen/qwen3-vl-8b-instruct",
                     messages=[
                         {
                             "role": "user",
