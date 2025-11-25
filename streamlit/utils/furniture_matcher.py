@@ -1,8 +1,12 @@
+"""
+Furniture Matcher - Semantic Search for Furniture Recommendations
+Uses embeddings to find furniture items matching user's room description
+"""
+
 from typing import List, Dict, Tuple
 from sentence_transformers import SentenceTransformer
 from supabase import Client
 import streamlit as st
-from huggingface_hub import login
 
 # Embedding model (same as used in inventory setup)
 EMBEDDING_MODEL_NAME = "google/embeddinggemma-300m"
@@ -19,35 +23,30 @@ class FurnitureMatcher:
         """
         self.supabase = supabase_client
         self.embedding_model = None
-        self._login_hf()  # Log in to Hugging Face on initialization
-
-    def _login_hf(self):
-        """Login to Hugging Face using token stored in Streamlit secrets"""
-        try:
-            hf_token = st.secrets["huggingface_token"]
-            login(token=hf_token)
-            print("✅ Logged in to Hugging Face Hub")
-        except KeyError:
-            print("⚠️ Hugging Face token not found in secrets.toml. Gated models may fail to load.")
-
+    
     def load_embedding_model(self):
         """Load the sentence transformer model for embeddings"""
         if self.embedding_model is None:
-            print(f"📥 Loading embedding model: {EMBEDDING_MODEL_NAME}")
+            print(f"Loading embedding model: {EMBEDDING_MODEL_NAME}")
             self.embedding_model = SentenceTransformer(EMBEDDING_MODEL_NAME)
-            print("✅ Embedding model loaded")
+            print("Embedding model loaded")
         return self.embedding_model
     
     def generate_query_embedding(self, room_description: str) -> List[float]:
-        """Generate embedding vector for the room description"""
+        """
+        Generate embedding vector for the room description
+        
+        Args:
+            room_description: AI-generated room description from user preferences
+            
+        Returns:
+            List of floats representing the embedding vector
+        """
         if self.embedding_model is None:
             self.load_embedding_model()
         
         embedding = self.embedding_model.encode(room_description, convert_to_tensor=False)
         return embedding.tolist()
-    
-    # rest of the methods remain unchanged
-
     
     def find_similar_furniture(
         self, 
@@ -81,11 +80,11 @@ class FurnitureMatcher:
             if result.data:
                 return result.data
             else:
-                print(f"⚠️ No results found for category: {category}")
+                print(f"No results found for category: {category}")
                 return []
                 
         except Exception as e:
-            print(f"❌ Error finding similar furniture for {category}: {str(e)}")
+            print(f"Error finding similar furniture for {category}: {str(e)}")
             # Fallback: Get random items from category
             return self._get_fallback_items(category, top_k)
     
@@ -105,7 +104,7 @@ class FurnitureMatcher:
                 return result.data
             return []
         except Exception as e:
-            print(f"❌ Fallback also failed for {category}: {str(e)}")
+            print(f"Fallback also failed for {category}: {str(e)}")
             return []
     
     def get_recommendations_for_all_categories(
@@ -129,9 +128,9 @@ class FurnitureMatcher:
             categories = ['beds', 'chairs', 'sofas', 'tables']
         
         # Generate embedding for room description
-        print("🧠 Generating embedding for room description...")
+        print("Generating embedding for room description...")
         query_embedding = self.generate_query_embedding(room_description)
-        print(f"✅ Embedding generated ({len(query_embedding)} dimensions)")
+        print(f"Embedding generated ({len(query_embedding)} dimensions)")
         
         recommendations = {}
         
@@ -141,9 +140,9 @@ class FurnitureMatcher:
             recommendations[category] = items
             
             if items:
-                print(f"✅ Found {len(items)} {category}")
+                print(f"Found {len(items)} {category}")
             else:
-                print(f"⚠️ No {category} found")
+                print(f"No {category} found")
         
         return recommendations
     

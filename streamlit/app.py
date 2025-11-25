@@ -546,7 +546,7 @@ if len(st.session_state.selected_furniture) == 4:
                     area = dims['length'] * dims['width']
                     st.metric("Area", f"{area:.1f} sq ft")
                 
-                st.info("Dimensions were estimated by AI based on the room images")
+                st.info("Dimensions estimated based on the room images")
             
             # Next steps
             st.divider()

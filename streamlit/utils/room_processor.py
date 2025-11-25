@@ -22,7 +22,7 @@ STANDARD_HEIGHT = 720  # 720p height
 
 # Models
 VISION_EDIT_MODEL = "google/gemini-2.5-flash-image-preview"  # For object removal
-VISION_CHECK_MODEL = "x-ai/grok-4.1-fast:free"  # For verification and dimension prediction
+VISION_CHECK_MODEL = "qwen/qwen3-vl-8b-instruct"  # For verification and dimension prediction
 
 # Folders
 ORIGINAL_ROOM_DIR = Path("original_room")
@@ -316,7 +316,7 @@ Be precise and realistic. Most residential rooms range from 10-20 feet per dimen
             
         except Exception as e:
             print(f"Error predicting dimensions: {str(e)}")
-            return {'length': 12.0, 'width': 12.0}  # Default dimensions
+            return {'length': 15.0, 'width': 15.0}  # Default dimensions
     
     def process_uploaded_room(
         self, 

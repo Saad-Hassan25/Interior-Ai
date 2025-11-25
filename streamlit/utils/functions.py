@@ -102,7 +102,7 @@ Generate the room description paragraph:"""
                 "Content-Type": "application/json",
             },
             json={
-                "model": "openai/gpt-oss-120b", # openai/gpt-oss-20b:free
+                "model": "openai/gpt-oss-20b:free", # openai/gpt-oss-120b
                 "messages": [
                     {
                         "role": "system",

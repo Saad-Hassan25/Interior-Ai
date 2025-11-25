@@ -471,7 +471,7 @@ IMPORTANT: Return ONLY valid JSON. Do not include any markdown formatting, expla
         for attempt in range(max_retries):
             try:
                 if attempt > 0:
-                    st.warning(f"🔄 Retry attempt {attempt + 1}/{max_retries} for AI placement instructions...")
+                    st.warning(f"Retry attempt {attempt + 1}/{max_retries} for AI placement instructions...")
                 
                 completion = self.client.chat.completions.create(
                     model="qwen/qwen3-vl-8b-instruct",
@@ -507,23 +507,23 @@ IMPORTANT: Return ONLY valid JSON. Do not include any markdown formatting, expla
                 
                 # Success - return the parsed JSON
                 if attempt > 0:
-                    st.success("✅ Valid JSON response received!")
+                    st.success("Valid JSON response received!")
                 return placement_json
                 
             except json.JSONDecodeError as e:
                 if attempt < max_retries - 1:
-                    st.warning(f"⚠️ Invalid JSON response (attempt {attempt + 1}): {str(e)}")
+                    st.warning(f"Invalid JSON response (attempt {attempt + 1}): {str(e)}")
                     time.sleep(2)  # Wait before retry
                 else:
-                    st.error(f"❌ Failed to get valid JSON after {max_retries} attempts")
+                    st.error(f"Failed to get valid JSON after {max_retries} attempts")
                     st.error(f"Last response: {response_text[:200]}...")
                     return None
             except Exception as e:
                 if attempt < max_retries - 1:
-                    st.warning(f"⚠️ Error processing response (attempt {attempt + 1}): {str(e)}")
+                    st.warning(f"Error processing response (attempt {attempt + 1}): {str(e)}")
                     time.sleep(2)
                 else:
-                    st.error(f"❌ Error getting AI placement instructions: {str(e)}")
+                    st.error(f"Error getting AI placement instructions: {str(e)}")
                     return None
         
         return None

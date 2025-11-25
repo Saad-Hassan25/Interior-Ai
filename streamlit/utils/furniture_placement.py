@@ -13,6 +13,56 @@ import os
 from datetime import datetime
 
 
+def rephrase_room_description(api_key: str, ai_room_description: str) -> str:
+    """
+    Rephrase the AI-generated room description to focus only on theme/design/style,
+    removing furniture-specific information.
+    
+    Args:
+        api_key (str): OpenRouter API key
+        ai_room_description (str): Original AI-generated room description
+        
+    Returns:
+        str: Rephrased description focusing on theme/design/style only
+    """
+    url = "https://openrouter.ai/api/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+    }
+    
+    prompt = f"""Rephrase this room description. 
+
+Keep the overall theme/design/style of the room. I do not need any information regarding the furniture items so remove them. The output should describe the room theme/design and style only.
+
+Original Description:
+{ai_room_description}"""
+
+    payload = {
+        "model": "openai/gpt-oss-20b:free",
+        "messages": [
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ],
+        "temperature": 0.5,
+        "max_tokens": 1024
+    }
+    
+    try:
+        response = requests.post(url, headers=headers, json=payload, timeout=30)
+        response.raise_for_status()
+        result = response.json()
+        
+        rephrased = result['choices'][0]['message']['content'].strip()
+        return rephrased
+        
+    except Exception as e:
+        st.warning(f"Failed to rephrase description: {e}. Using original description.")
+        return ai_room_description
+
+
 class FurniturePlacer:
     """Handles furniture placement in room images using Gemini API."""
     
@@ -58,7 +108,7 @@ class FurniturePlacer:
             
             return base64.b64encode(img_data).decode("utf-8")
         except Exception as e:
-            st.error(f"❌ Failed to encode image: {e}")
+            st.error(f"Failed to encode image: {e}")
             return None
     
     def fetch_image_from_source(self, image_source):
@@ -81,10 +131,10 @@ class FurniturePlacer:
             elif os.path.exists(image_source):
                 return Image.open(image_source)
             else:
-                st.error(f"❌ Image not found: {image_source}")
+                st.error(f"Image not found: {image_source}")
                 return None
         except Exception as e:
-            st.error(f"❌ Failed to fetch image: {e}")
+            st.error(f"Failed to fetch image: {e}")
             return None
     
     def place_all_furniture(self, room_image_path, furniture_items, placement_instructions):
@@ -107,7 +157,7 @@ class FurniturePlacer:
         # Encode room image
         room_b64 = self.encode_image_for_api(room_image)
         if not room_b64:
-            st.error("❌ Failed to encode room image.")
+            st.error("Failed to encode room image.")
             return None
         
         # Concatenate placement instructions
@@ -138,7 +188,7 @@ class FurniturePlacer:
                         furniture_encoded.append(category)
         
         if len(furniture_encoded) == 0:
-            st.error("❌ No furniture images could be encoded.")
+            st.error("No furniture images could be encoded.")
             return None
         
         st.info(f"🪑 Placing {len(furniture_encoded)} furniture items in the room...")
@@ -173,11 +223,11 @@ class FurniturePlacer:
                 result_image = Image.open(BytesIO(base64.b64decode(img_b64)))
                 return result_image
             else:
-                st.error("❌ No image returned from API.")
+                st.error("No image returned from API.")
                 return None
                 
         except Exception as e:
-            st.error(f"❌ Error during furniture placement: {e}")
+            st.error(f"Error during furniture placement: {e}")
             if 'resp_json' in locals():
                 st.error(f"API Response: {resp_json}")
             return None
@@ -196,15 +246,29 @@ class FurniturePlacer:
         # Encode room image
         room_b64 = self.encode_image_for_api(room_image)
         if not room_b64:
-            st.error("❌ Failed to encode room image for refinement.")
+            st.error("Failed to encode room image for refinement.")
             return None
         
-        st.info("🎨 Refining room to match your design preferences...")
+        st.info("Rephrasing room description to focus on theme/design/style...")
         
-        # Build refinement prompt
+        # Rephrase the description to remove furniture-specific information
+        rephrased_description = rephrase_room_description(self.api_key, ai_room_description)
+        
+        # Print the rephrased description that will be sent to the model
+        st.success("✅ Rephrased Description (sent to reimagine model):")
+        st.info(rephrased_description)
+        print("\n" + "="*80)
+        print("REPHRASED DESCRIPTION SENT TO REIMAGINE MODEL:")
+        print("="*80)
+        print(rephrased_description)
+        print("="*80 + "\n")
+        
+        st.info("Refining room to match your design preferences...")
+        
+        # Build refinement prompt with rephrased description
         prompt = f"""Reimagine this room. The user requirements are given below. Do not change the furniture items but you may change their orientation (if required).
 User Requirements:
-{ai_room_description}
+{rephrased_description}
 """
 
         headers = {
@@ -239,11 +303,11 @@ User Requirements:
                 refined_image = Image.open(BytesIO(base64.b64decode(img_b64)))
                 return refined_image
             else:
-                st.error("❌ No refined image returned from API.")
+                st.error("No refined image returned from API.")
                 return None
                 
         except Exception as e:
-            st.error(f"❌ Error during theme refinement: {e}")
+            st.error(f"Error during theme refinement: {e}")
             if 'resp_json' in locals():
                 st.error(f"API Response: {resp_json}")
             return None
