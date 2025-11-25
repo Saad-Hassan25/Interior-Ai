@@ -1,12 +1,8 @@
-"""
-Furniture Matcher - Semantic Search for Furniture Recommendations
-Uses embeddings to find furniture items matching user's room description
-"""
-
 from typing import List, Dict, Tuple
 from sentence_transformers import SentenceTransformer
 from supabase import Client
 import streamlit as st
+from huggingface_hub import login
 
 # Embedding model (same as used in inventory setup)
 EMBEDDING_MODEL_NAME = "google/embeddinggemma-300m"
@@ -23,7 +19,17 @@ class FurnitureMatcher:
         """
         self.supabase = supabase_client
         self.embedding_model = None
-    
+        self._login_hf()  # Log in to Hugging Face on initialization
+
+    def _login_hf(self):
+        """Login to Hugging Face using token stored in Streamlit secrets"""
+        try:
+            hf_token = st.secrets["huggingface_token"]
+            login(token=hf_token)
+            print("✅ Logged in to Hugging Face Hub")
+        except KeyError:
+            print("⚠️ Hugging Face token not found in secrets.toml. Gated models may fail to load.")
+
     def load_embedding_model(self):
         """Load the sentence transformer model for embeddings"""
         if self.embedding_model is None:
@@ -33,20 +39,15 @@ class FurnitureMatcher:
         return self.embedding_model
     
     def generate_query_embedding(self, room_description: str) -> List[float]:
-        """
-        Generate embedding vector for the room description
-        
-        Args:
-            room_description: AI-generated room description from user preferences
-            
-        Returns:
-            List of floats representing the embedding vector
-        """
+        """Generate embedding vector for the room description"""
         if self.embedding_model is None:
             self.load_embedding_model()
         
         embedding = self.embedding_model.encode(room_description, convert_to_tensor=False)
         return embedding.tolist()
+    
+    # rest of the methods remain unchanged
+
     
     def find_similar_furniture(
         self, 
