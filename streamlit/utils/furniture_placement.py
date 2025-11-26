@@ -266,7 +266,7 @@ class FurniturePlacer:
         st.info("Refining room to match your design preferences...")
         
         # Build refinement prompt with rephrased description
-        prompt = f"""Reimagine this room. The user requirements are given below. Do not change the furniture items but you may change their orientation (if required).
+        prompt = f"""Reimagine this room. The user requirements are given below. Do not change the furniture items.
 User Requirements:
 {rephrased_description}
 """
